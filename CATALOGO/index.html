@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ===================== META BÁSICA ===================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Librería Vida – Catálogo, Biblias, Libros, Regalos y Cuadros</title>
+  <meta name="description" content="Librería Vida: catálogo virtual de biblias, libros, regalos cristianos y cuadros. Envíos, ofertas y atención por WhatsApp. Conoce nuestras novedades y filtra por categoría." />
+  <meta name="theme-color" content="#0a2a43" />
+  <link rel="icon" href="/img/favicon.png" type="image/png" />
+
+  <!-- ===================== SEO / SOCIAL ===================== -->
+  <link rel="canonical" href="https://tudominio.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Librería Vida – Catálogo" />
+  <meta property="og:description" content="Biblias, libros, regalos y cuadros. Compra con confianza en Librería Vida." />
+  <meta property="og:image" content="https://tudominio.com/img/og-cover.jpg" />
+  <meta property="og:url" content="https://tudominio.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ===================== FUENTES ===================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ===================== CSS PRINCIPAL ===================== -->
+  <link rel="stylesheet" href="css.css" />
+
+  <!-- ===================== PREFETCH/PRERENDER (Opcional) ===================== -->
+  <!-- <link rel="prefetch" href="BIBLIAS.html" /> -->
+  <!-- <link rel="prefetch" href="REGALOS.html" /> -->
+  <!-- <link rel="prefetch" href="LIBROS.html" /> -->
+  <!-- <link rel="prefetch" href="CUADROS.html" /> -->
+
+  <!-- ===================== ESTRUCTURADO JSON-LD ===================== -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Store",
+    "name":"Librería Vida",
+    "image":"https://tudominio.com/img/og-cover.jpg",
+    "url":"https://tudominio.com/",
+    "telephone":"+52 844 328 8521",
+    "address":{
+      "@type":"PostalAddress",
+      "addressCountry":"MX"
+    },
+    "sameAs":[
+      "https://facebook.com/tu_pagina",
+      "https://instagram.com/tu_pagina"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- ===================== SKIP LINK ACCESIBLE ===================== -->
+  <a class="skip-to-content" href="#contenido" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;">Saltar al contenido principal</a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" role="banner">
+    <div class="logo" aria-label="Logo Librería Vida">
+      <img src="IMAGENES/ChatGPT_Image_15_ago_2025__12_29_34_a.m.-removebg-preview (1).png" alt="Librería Vida" width="56" height="56" />
+      <h1>Librería <span>Vida</span></h1>
+    </div>
+
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="nav" class="nav" role="navigation" aria-label="Navegación principal">
+      <a href="/" aria-current="page">Inicio</a>
+      <a href="BIBLIAS.html">Biblias</a>
+      <a href="REGALOS.HTML">Regalos</a>
+      <a href="LIBROS.html">Libros</a>
+      <a href="CUADROS.HTML">Cuadros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- ===================== BREADCRUMBS ===================== -->
+  <nav class="breadcrumbs" aria-label="Ruta de navegación" style="max-width:1200px;margin:8px auto 0;padding:0 12px;">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList" style="list-style:none;display:flex;gap:.5rem;flex-wrap:wrap;">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="/"><span itemprop="name">Inicio</span></a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li aria-hidden="true">›</li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">Catálogo</span>
+        <meta itemprop="position" content="2" />
+      </li>
+    </ol>
+  </nav>
+
+  <!-- ===================== HERO / CARRUSEL PRINCIPAL (DE ORILLA A ORILLA) ===================== -->
+  <section class="slider" id="slider" aria-label="Promociones destacadas">
+    <div class="slides">
+      <img src="IMAGENES/MES DE LA.jpg" alt="Promoción del mes" loading="eager" />
+      <img src="IMAGENES/BIBLIAS INSPIRA.png" alt="Biblias Inspira, nuevas ediciones" loading="lazy" />
+      <img src="IMAGENES/BIBLIAS NIÑOS.png" alt="Biblias para niños con ilustraciones" loading="lazy" />
+    </div>
+    <button class="slider-btn prev" aria-label="Anterior de promociones">&#10094;</button>
+    <button class="slider-btn next" aria-label="Siguiente de promociones">&#10095;</button>
+    <div class="dots" aria-label="Indicadores de carrusel"></div>
+  </section>
+
+  <!-- ===================== BENEFICIOS / BANNERS PEQUEÑOS ===================== -->
+  <section class="usp" style="max-width:1200px;margin:10px auto 14px;padding:0 12px;">
+    <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+      <li class="usp__item" style="background:#fff;border-radius:12px;padding:12px;box-shadow:0 8px 20px rgba(0,0,0,.06);display:flex;gap:10px;align-items:center;">
+        <img src="IMAGENES/envio-rapido.png" width="28" height="28" alt="" />
+        <p><strong>Envíos a todo México</strong> — Rápidos y seguros.</p>
+      </li>
+      <li class="usp__item" style="background:#fff;border-radius:12px;padding:12px;box-shadow:0 8px 20px rgba(0,0,0,.06);display:flex;gap:10px;align-items:center;">
+        <img src="IMAGENES/whatsapp.png" width="28" height="28" alt="" />
+        <p><strong>Asesoría por WhatsApp</strong> — Te ayudamos a elegir.</p>
+      </li>
+      <li class="usp__item" style="background:#fff;border-radius:12px;padding:12px;box-shadow:0 8px 20px rgba(0,0,0,.06);display:flex;gap:10px;align-items:center;">
+        <img src="IMAGENES/tarjeta-de-regalo.png" width="28" height="28" alt="" />
+        <p><strong>Regalos cristianos</strong> — Para toda ocasión.</p>
+      </li>
+      <li class="usp__item" style="background:#fff;border-radius:12px;padding:12px;box-shadow:0 8px 20px rgba(0,0,0,.06);display:flex;gap:10px;align-items:center;">
+        <img src="IMAGENES/verificacion-de-escudo.png" width="28" height="28" alt="" />
+        <p><strong>Compra segura</strong> — Sitio protegido.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===================== COVER-FLOW MINI (NOVEDADES) ===================== -->
+  <section class="coverflow" aria-label="Novedades destacadas">
+    <h2 class="section-title">Novedades</h2>
+
+    <div class="carousel-container">
+      <div class="carousel" role="group" aria-roledescription="carrusel de novedades">
+        <!-- Tarjetas (pegadas y centrables con JS) -->
+        <div class="card">
+          <img src="IMAGENES/Diseño sin título.png" alt="Nueva Biblia de Estudio" loading="lazy" />
+        </div>
+        <div class="card">
+          <img src="IMAGENES/b6879810ad39d3da43db4ae5c8b65e9a.jpg" alt="Agenda cristiana 2025" loading="lazy" />
+        </div>
+        <div class="card">
+          <img src="IMAGENES/22a02241630ab8ee8c71ce748f9a1278.jpg" alt="Devocional ilustrado" loading="lazy" />
+        </div>
+        <div class="card">
+          <img src="IMAGENES/3e25e45eb31e9488224d86db451a0512.jpg" alt="Cuadro con versículo" loading="lazy" />
+        </div>
+        <div class="card">
+          <img src="IMAGENES/ca20614fd4381b192d088c43543a70e2.jpg" alt="Regalo especial" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="carousel-controls" aria-label="Controles de novedades">
+        <button type="button" id="cf-prev" aria-label="Novedad anterior">Anterior</button>
+        <button type="button" id="cf-next" aria-label="Siguiente novedad">Siguiente</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TOOLBAR (FILTROS + BUSCADOR) ===================== -->
+ <section class="toolbar" aria-label="Herramientas de búsqueda y filtros">
+    <div class="filters" role="group" aria-label="Filtros por categoría">
+      <button data-filter="all" class="chip active" aria-pressed="true">Todos</button>
+      <button data-filter="BIBLIAS" class="chip" aria-pressed="false">Biblias</button>
+      <button data-filter="REGALOS" class="chip" aria-pressed="false">Regalos</button>
+      <button data-filter="LIBROS" class="chip" aria-pressed="false">Libros</button>
+      <button data-filter="CUADROS" class="chip" aria-pressed="false">Cuadros</button>
+    </div>
+
+    <label for="search" class="sr-only" style="position:absolute;left:-9999px">Buscar producto</label>
+    <input id="search" class="search" type="search" placeholder="Buscar producto…" autocomplete="off" />
+  </section>
+
+  <!-- ===================== CONTENIDO PRINCIPAL ===================== -->
+  <main id="contenido">
+    <!-- ===================== GRID DE PRODUCTOS ===================== -->
+    <section class="grid" id="grid" aria-label="Catálogo de productos">
+      <!-- ====== PRODUCTO 1 ====== -->
+      <article class="card-product BIBLIAS"
+               data-title="Biblia Chequera"
+               data-images="IMAGENES/biblia-chequera-1.jpg,IMAGENES/biblia-chequera-2.jpg,IMAGENES/biblia-chequera-3.jpg">
+        <img src="IMAGENES/20%.png" alt="Biblia Chequera color azul marino" loading="lazy" />
+        <div class="info">
+          <h3>Biblia Chequera</h3>
+          <p>Compacta, elegante y fácil de llevar. Ideal para regalo.</p>
+        </div>
+      </article>
+
+      <!-- ====== PRODUCTO 2 ====== -->
+      <article class="card-product REGALOS"
+               data-title="Agenda 2025"
+               data-images="IMAGENES/agenda-1.jpg,IMAGENES/agenda-2.jpg,IMAGENES/agenda-3.jpg">
+        <img src="IMAGENES/50%.png" alt="Agenda 2025 con motivos cristianos" loading="lazy" />
+        <div class="info">
+          <h3>Agenda 2025</h3>
+          <p>Organiza tu año con inspiración diaria y versículos.</p>
+        </div>
+      </article>
+
+      <!-- ====== PRODUCTO 3 ====== -->
+      <article class="card-product CUADROS"
+               data-title="Cuadro de Madera"
+               data-images="IMAGENES/cuadro-1.jpg,IMAGENES/cuadro-2.jpg,IMAGENES/cuadro-3.jpg">
+        <img src="IMAGENES/10%.png" alt="Cuadro de madera con versículo" loading="lazy" />
+        <div class="info">
+          <h3>Cuadro de Madera</h3>
+          <p>Decoración con mensaje: dale vida a tus espacios.</p>
+        </div>
+      </article>
+
+      <!-- ====== PRODUCTO 4 ====== -->
+      <article class="card-product LIBROS"
+               data-title="Devocional Diario"
+               data-images="IMAGENES/devocional-1.jpg,IMAGENES/devocional-2.jpg,IMAGENES/devocional-3.jpg">
+        <img src="IMAGENES/INCENDIARIO.jpeg" alt="Devocional Diario tapa blanda" loading="lazy" />
+        <div class="info">
+          <h3>Devocional Diario</h3>
+          <p>Lecturas cortas con reflexión y oración cada día.</p>
+        </div>
+      </article>
+
+      <!-- ====== PRODUCTO 5 ====== -->
+      <article class="card-product BIBLIAS"
+               data-title="Biblia de Estudio"
+               data-images="IMAGENES/biblia-estudio-1.jpg,IMAGENES/biblia-estudio-2.jpg,IMAGENES/biblia-estudio-3.jpg">
+        <img src="IMAGENES/DIARIO VIVIR.jpeg" alt="Biblia de estudio con notas" loading="lazy" />
+        <div class="info">
+          <h3>Biblia de Estudio</h3>
+          <p>Notas, mapas y artículos para profundizar en la Palabra.</p>
+        </div>
+      </article>
+
+      <!-- ====== PRODUCTO 6 ====== -->
+      <article class="card-product REGALOS"
+               data-title="Taza con Versículo"
+               data-images="IMAGENES/taza-1.jpg,IMAGENES/taza-2.jpg,IMAGENES/taza-3.jpg">
+        <img src="IMAGENES/TAZA.jpeg" alt="Taza con versículo bíblico" loading="lazy" />
+        <div class="info">
+          <h3>Taza con Versículo</h3>
+          <p>Comienza tu día con café y una promesa de Dios.</p>
+        </div>
+      </article>
+
+      <!-- ====== PRODUCTO 7 ====== -->
+      <article class="card-product CUADROS"
+               data-title="CUADRO DE LUJO"
+               data-images="IMAGENES/lamina-1.jpg,IMAGENES/lamina-2.jpg">
+        <img src="IMAGENES/CUADRO.jpeg" alt="Lámina caligrafía con frase" loading="lazy" />
+        <div class="info">
+          <h3>CUADRO DE LUJO</h3>
+          <p>Diseño elegante con bordes redondeados.</p>
+        </div>
+      </article>
+
+      <!-- ====== PRODUCTO 8 ====== -->
+      <article class="card-product LIBROS"
+               data-title="Biblia Infantil Ilustrada"
+               data-images="IMAGENES/biblia-infantil-1.jpg,IMAGENES/biblia-infantil-2.jpg,IMAGENES/biblia-infantil-3.jpg">
+        <img src="IMAGENES/images (11).jpg" alt="Biblia infantil con ilustraciones" loading="lazy" />
+        <div class="info">
+          <h3>Biblia Infantil Ilustrada</h3>
+          <p>Historias bíblicas con dibujos a color para niños.</p>
+        </div>
+      </article>
+
+      <!-- ====== Más productos de ejemplo para completar UI ====== -->
+      <article class="card-product BIBLIAS"
+               data-title="Biblia Letra Grande"
+               data-images="IMAGENES/letra-grande-1.jpg,IMAGENES/letra-grande-2.jpg">
+        <img src="IMAGENES/SSG NEGRA SB.jpeg" alt="Biblia letra grande tapa dura" loading="lazy" />
+        <div class="info">
+          <h3>Biblia Letra Grande</h3>
+          <p>Lectura cómoda para todas las edades.</p>
+        </div>
+      </article>
+
+      <article class="card-product REGALOS"
+               data-title="Llaveros con Mensaje"
+               data-images="IMAGENES/llavero-1.jpg,IMAGENES/llavero-2.jpg">
+        <img src="IMAGENES/LLAVERO.jpeg" alt="Llavero con mensaje cristiano" loading="lazy" />
+        <div class="info">
+          <h3>Llaveros con Mensaje</h3>
+          <p>Detalles con propósito, perfectos para obsequiar.</p>
+        </div>
+      </article>
+
+      <article class="card-product LIBROS"
+               data-title="Peluche infantil"
+               data-images="IMAGENES/manual-oracion-1.jpg,IMAGENES/manual-oracion-2.jpg">
+        <img src="IMAGENES/oso de peluche.jpeg" alt="Manual de oración tapa flexible" loading="lazy" />
+        <div class="info">
+          <h3>Oso de Peluche</h3>
+          <p>Lindo regalo para los mas pequeños de la casa.</p>
+        </div>
+      </article>
+
+      <article class="card-product CUADROS"
+               data-title="Juego de preguntas biblicas"
+               data-images="IMAGENES/triptico-1.jpg,IMAGENES/triptico-2.jpg,IMAGENES/triptico-3.jpg">
+        <img src="IMAGENES/juego de mesa.jpeg" alt="Tríptico decorativo Isaías" loading="lazy" />
+        <div class="info">
+          <h3>Juego de preguntas biblicas</h3>
+          <p>Diviertete y aprende en familia.</p>
+        </div>
+      </article>
+
+      <!-- (Agrega tantos <article> como necesites; el modal tomará sus imágenes del data-images) -->
+    </section>
+
+    <!-- ===================== CTA SECCIONES / LINKS RÁPIDOS ===================== -->
+    <section class="quick-links" aria-label="Enlaces rápidos a familias de productos" style="max-width:1200px;margin:12px auto 24px;padding:0 12px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+        <a class="cta-link" href="BIBLIAS.html" style="background:#fff;border-radius:12px;padding:16px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 20px rgba(0,0,0,.06);text-decoration:none;">
+          <img src="IMAGENES/biblia.png" alt="" width="32" height="32" />
+          <div><strong>Biblias</strong><br /><small>Estudio, letra grande, infantiles</small></div>
+        </a>
+        <a class="cta-link" href="LIBROS.html" style="background:#fff;border-radius:12px;padding:16px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 20px rgba(0,0,0,.06);text-decoration:none;">
+          <img src="IMAGENES/libro-marcador.png" alt="" width="32" height="32" />
+          <div><strong>Libros</strong><br /><small>Devocionales, estudio, familia</small></div>
+        </a>
+        <a class="cta-link" href="REGALOS.HTML" style="background:#fff;border-radius:12px;padding:16px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 20px rgba(0,0,0,.06);text-decoration:none;">
+          <img src="IMAGENES/regalos.png" alt="" width="32" height="32" />
+          <div><strong>Regalos</strong><br /><small>Tazas, llaveros, detalles</small></div>
+        </a>
+        <a class="cta-link" href="CUADROS.HTML" style="background:#fff;border-radius:12px;padding:16px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 20px rgba(0,0,0,.06);text-decoration:none;">
+          <img src="IMAGENES/modo-paisaje.png" alt="" width="32" height="32" />
+          <div><strong>Cuadros</strong><br /><small>Decoración con mensaje</small></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONIOS ===================== -->
+    <section class="testimonios" aria-label="Opiniones de clientes" style="background:#fff; padding:22px 0; box-shadow:0 8px 20px rgba(0,0,0,.06);">
+      <div style="max-width:1200px;margin:0 auto;padding:0 12px;">
+        <h2 style="margin-bottom:10px;">Lo que dicen nuestros clientes</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
+          <blockquote class="quote" style="background:#f8fafc;border-radius:12px;padding:14px;">
+            <p>“Excelente atención y variedad. La biblia que compré es hermosa.”</p>
+            <footer>— Mariana G.</footer>
+          </blockquote>
+          <blockquote class="quote" style="background:#f8fafc;border-radius:12px;padding:14px;">
+            <p>“Llegó muy rápido y todo en perfecto estado. ¡Gracias!”</p>
+            <footer>— Carlos R.</footer>
+          </blockquote>
+          <blockquote class="quote" style="background:#f8fafc;border-radius:12px;padding:14px;">
+            <p>“Los cuadros son bellísimos, iluminan mi sala.”</p>
+            <footer>— Alejandra P.</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== NEWSLETTER ===================== -->
+    <section class="newsletter" aria-label="Suscripción a ofertas" style="max-width:900px;margin:18px auto;border-radius:12px;background:#fff;box-shadow:0 8px 20px rgba(0,0,0,.06);padding:18px;">
+      <h2 style="margin-bottom:8px;">Recibe ofertas y novedades</h2>
+      <form action="#" method="post" onsubmit="return false" style="display:flex;gap:10px;flex-wrap:wrap;">
+        <label for="email" class="sr-only" style="position:absolute;left:-9999px;">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="Tu correo" required
+               style="flex:1;min-width:240px;padding:.7em .9em;border:1px solid #d7dee6;border-radius:10px;" />
+        <button class="btn primary" type="submit">Suscribirme</button>
+      </form>
+    </section>
+
+    <!-- ===================== SECCIÓN DE CONTACTO ===================== -->
+    <section id="contacto" class="contacto" aria-label="Contacto" style="max-width:1200px;margin:18px auto;padding:0 12px;">
+      <h2>Contacto</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:8px;">
+        <div class="contact-card" style="background:#fff;border-radius:12px;padding:16px;box-shadow:0 8px 20px rgba(0,0,0,.06);">
+          <h3>Escríbenos</h3>
+          <p>WhatsApp: <a href="https://wa.me/528443288521" target="_blank" rel="noopener">+52 844 328 8521</a></p>
+          <p>Correo: <a href="mailto:ventas@tudominio.com">ventas@tudominio.com</a></p>
+        </div>
+
+        <form class="contact-form" action="#" method="post" onsubmit="return false"
+              style="background:#fff;border-radius:12px;padding:16px;box-shadow:0 8px 20px rgba(0,0,0,.06);">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div>
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required
+                     style="width:100%;padding:.6em;border:1px solid #d7dee6;border-radius:8px;" />
+            </div>
+            <div>
+              <label for="correo">Correo</label>
+              <input id="correo" name="correo" type="email" placeholder="tu@correo.com" required
+                     style="width:100%;padding:.6em;border:1px solid #d7dee6;border-radius:8px;" />
+            </div>
+          </div>
+          <div style="margin-top:10px;">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿Cómo podemos ayudarte?"
+                      style="width:100%;padding:.6em;border:1px solid #d7dee6;border-radius:8px;"></textarea>
+          </div>
+          <button class="btn primary" type="submit" style="margin-top:10px;">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===================== PREGUNTAS FRECUENTES ===================== -->
+    <section class="faq" aria-label="Preguntas frecuentes" style="max-width:900px;margin:18px auto;">
+      <h2>Preguntas frecuentes</h2>
+      <details style="background:#fff;border-radius:12px;padding:12px;margin-top:10px;box-shadow:0 8px 20px rgba(0,0,0,.06);">
+        <summary>¿Cómo compro un producto?</summary>
+        <p>Haz clic en el producto para abrir la galería y usa el botón “Consultar por WhatsApp” para coordinar tu compra.</p>
+      </details>
+      <details style="background:#fff;border-radius:12px;padding:12px;margin-top:10px;box-shadow:0 8px 20px rgba(0,0,0,.06);">
+        <summary>¿Hacen envíos?</summary>
+        <p>Sí, enviamos a toda la República Mexicana.</p>
+      </details>
+      <details style="background:#fff;border-radius:12px;padding:12px;margin-top:10px;box-shadow:0 8px 20px rgba(0,0,0,.06);">
+        <summary>¿Puedo pedir factura?</summary>
+        <p>Claro, compártenos tus datos fiscales al realizar tu pedido.</p>
+      </details>
+    </section>
+  </main>
+
+  <!-- ===================== MODAL PRODUCTO (GALERÍA MULTIFOTO) ===================== -->
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" aria-label="Cerrar modal">&times;</button>
+
+      <h3 id="modalTitle"></h3>
+
+      <div class="product-gallery">
+        <div class="gallery__stage">
+          <button class="gallery__nav left" aria-label="Imagen anterior">&#10094;</button>
+          <img id="galleryMain" src="" alt="" />
+          <button class="gallery__nav right" aria-label="Imagen siguiente">&#10095;</button>
+        </div>
+        <div class="thumbs" id="galleryThumbs"></div>
+      </div>
+
+      <div class="modal__actions">
+        <a id="whatsBuy" class="btn primary" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      </div>
+    </div>
+    <div class="modal__backdrop" aria-hidden="true"></div>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <p>¿Dudas? Escríbenos: <a class="accent" href="https://wa.me/528443288521" target="_blank" rel="noopener">+52 844 328 8521</a></p>
+    <nav aria-label="Redes sociales" class="social">
+      <a href="#" aria-label="Facebook"><img src="IMAGENES/facebook.png" alt="Facebook" width="32" height="32" /></a>
+      <a href="#" aria-label="Instagram"><img src="IMAGENES/instagram.png" alt="Instagram" width="32" height="32" /></a>
+    </nav>
+    <small>&copy; 2025 Librería Vida. Todos los derechos reservados.</small>
+  </footer>
+
+  <!-- ===================== BOTÓN FLOTANTE WHATSAPP ===================== -->
+  <a class="wa-float"
+     href="https://wa.me/528443288521?text=Hola%20Librer%C3%ADa%20Vida%2C%20quiero%20informaci%C3%B3n"
+     target="_blank" rel="noopener" aria-label="WhatsApp">
+    <img src="IMAGENES/whatsapp.png" alt="WhatsApp" width="32" height="32" />
+  </a>
+
+  <!-- ===================== NOSCRIPT (RESPALDO) ===================== -->
+  <noscript>
+    <div style="max-width:1200px;margin:12px auto;padding:12px;background:#fff;border-radius:10px;">
+      Para disfrutar todas las funciones (carruseles, filtros y galería), habilita JavaScript.
+    </div>
+  </noscript>
+
+  <!-- ===================== JS PRINCIPAL ===================== -->
+  <script src="java.js" defer></script>
+</body>
+</html>

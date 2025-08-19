@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Libros – Librería Vida</title>
+
+  <!-- Fuente & Favicon -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="IMAGENES/favicon.png" type="image/png"/>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="libros.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a class="logo" href="index.html" aria-label="Volver al inicio">
+      <img src="IMAGENES/ChatGPT_Image_15_ago_2025__12_29_34_a.m.-removebg-preview (1).png" alt="Librería Vida">
+      <span>Librería <strong>Vida</strong></span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="biblias.html">Biblias</a>
+      <a href="regalos.html">Regalos</a>
+      <a class="active" href="libros.html">Libros</a>
+      <a href="cuadros.html">Cuadros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <a class="header__cta" href="https://wa.me/528443288521?text=Hola%20Librer%C3%ADa%20Vida%2C%20necesito%20ayuda%20con%20Libros"
+       target="_blank" rel="noopener">WhatsApp</a>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a>
+    <span aria-hidden="true">›</span>
+    <strong>Libros</strong>
+  </nav>
+
+  <!-- Toolbar: Filtros + búsqueda + orden -->
+  <section class="toolbar" aria-label="Herramientas de catálogo">
+    <div class="left-tools">
+      <button id="openFilters" class="btn filter-btn" type="button" aria-controls="filtersDrawer" aria-expanded="false">☰ Filtros</button>
+      <div class="searchbox">
+        <input id="search" type="search" placeholder="Buscar libro (ej. ‘devocional’, ‘niños’, ‘tapa dura’)…" aria-label="Buscar"/>
+      </div>
+    </div>
+    <div class="sorter">
+      <label for="sort">Ordenar:</label>
+      <select id="sort" aria-label="Ordenar productos">
+        <option value="relevance">Relevancia</option>
+        <option value="price-asc">Precio: menor a mayor</option>
+        <option value="price-desc">Precio: mayor a menor</option>
+        <option value="title-asc">Nombre: A–Z</option>
+        <option value="title-desc">Nombre: Z–A</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Drawer de filtros tipo Amazon -->
+  <aside id="filtersDrawer" class="filters-drawer" aria-hidden="true">
+    <div class="filters-drawer__header">
+      <h3>Filtros</h3>
+      <button id="closeFilters" class="icon-btn" aria-label="Cerrar filtros">✕</button>
+    </div>
+
+    <form id="filtersForm" class="filters-form">
+      <!-- Categoría -->
+      <fieldset>
+        <legend>Categoría</legend>
+        <label><input type="checkbox" name="variant" value="devocional"> Devocional</label>
+        <label><input type="checkbox" name="variant" value="teologia"> Teología</label>
+        <label><input type="checkbox" name="variant" value="ninos"> Niños</label>
+        <label><input type="checkbox" name="variant" value="novela"> Novela</label>
+      </fieldset>
+
+      <!-- Formato / Encuadernado -->
+      <fieldset>
+        <legend>Formato</legend>
+        <label><input type="checkbox" name="size" value="tapadura"> Tapa dura</label>
+        <label><input type="checkbox" name="size" value="rustica"> Rústica</label>
+        <label><input type="checkbox" name="size" value="bolsillo"> Bolsillo</label>
+      </fieldset>
+
+      <!-- Precio -->
+      <fieldset class="price-field">
+        <legend>Precio (MXN)</legend>
+        <div class="price-row">
+          <input type="number" id="minPrice" placeholder="Mín" min="0" step="10">
+          <span>–</span>
+          <input type="number" id="maxPrice" placeholder="Máx" min="0" step="10">
+        </div>
+      </fieldset>
+
+      <div class="filters-actions">
+        <button id="applyFilters" type="button" class="btn primary">Aplicar</button>
+        <button id="clearFilters" type="button" class="btn ghost">Limpiar</button>
+      </div>
+    </form>
+  </aside>
+  <div id="filtersBackdrop" class="backdrop" hidden></div>
+
+  <!-- Meta -->
+  <section class="catalog-meta">
+    <div class="results"><span id="resultsCount">0</span> resultados</div>
+    <div class="view-toggle" role="group" aria-label="Modo de vista">
+      <button id="gridView" class="active" aria-pressed="true">Grid</button>
+      <button id="listView" aria-pressed="false">Lista</button>
+    </div>
+  </section>
+
+  <!-- Grid de productos -->
+  <main class="grid" id="grid" aria-live="polite">
+    <!-- Devocional -->
+    <article
+      class="card-product devocional rustica"
+      data-title="Devocional Diario – Incendiario"
+      data-price="200"
+      data-variant="devocional"
+      data-size="rustica"
+      data-images="IMAGENES/INCENDIARIO.jpeg">
+      <div class="card-media">
+        <img src="IMAGENES/INCENDIARIO.jpeg" alt="Devocional Diario – Incendiario">
+        <span class="badge price">$200</span>
+        <span class="badge sale">Nuevo</span>
+      </div>
+      <div class="info">
+        <h3>Devocional Diario – Incendiario</h3>
+        <p>Reflexiones prácticas para tu día a día.</p>
+        <div class="actions">
+          <button class="btn primary add-cart">Agregar</button>
+          <button class="btn ghost view">Ver</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Teología -->
+    <article
+      class="card-product teologia tapadura"
+      data-title="Introducción a la Teología"
+      data-price="320"
+      data-variant="teologia"
+      data-size="tapadura"
+      data-images="IMAGENES/TEOLOGIA.jpeg">
+      <div class="card-media">
+        <img src="IMAGENES/TEOLOGIA.jpeg" alt="Introducción a la Teología">
+        <span class="badge price">$320</span>
+      </div>
+      <div class="info">
+        <h3>Introducción a la Teología</h3>
+        <p>Doctrinas esenciales y enfoque cristocéntrico.</p>
+        <div class="actions">
+          <button class="btn primary add-cart">Agregar</button>
+          <button class="btn ghost view">Ver</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Niños -->
+    <article
+      class="card-product ninos rustica"
+      data-title="Historias Bíblicas para Niños"
+      data-price="180"
+      data-variant="ninos"
+      data-size="rustica"
+      data-images="IMAGENES/WhatsApp Image 2025-08-05 at 5.20.22 PM.jpeg">
+      <div class="card-media">
+        <img src="IMAGENES/WhatsApp Image 2025-08-05 at 5.20.22 PM.jpeg" alt="Historias Bíblicas para Niños">
+        <span class="badge price">$180</span>
+      </div>
+      <div class="info">
+        <h3>Historias Bíblicas para Niños</h3>
+        <p>Ilustraciones y lenguaje sencillo para peques.</p>
+        <div class="actions">
+          <button class="btn primary add-cart">Agregar</button>
+          <button class="btn ghost view">Ver</button>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Modal Producto -->
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" aria-label="Cerrar">&times;</button>
+
+      <div class="modal__header">
+        <h3 id="modalTitle">Producto</h3>
+        <span id="modalPrice" class="modal__price"></span>
+      </div>
+
+      <div class="product-gallery">
+        <div class="gallery__stage">
+          <button class="gallery__nav left" aria-label="Anterior">&#10094;</button>
+          <img id="galleryMain" src="" alt="">
+          <button class="gallery__nav right" aria-label="Siguiente">&#10095;</button>
+        </div>
+        <div class="thumbs" id="galleryThumbs"></div>
+      </div>
+
+      <div class="modal__body">
+        <div class="modal__desc">
+          <h4>Descripción</h4>
+          <p id="modalDesc">Edición con excelentes materiales y acabados. Envíos a todo México.</p>
+          <ul id="modalSpecs" class="specs">
+            <li>Categoría: <span data-spec="variant">—</span></li>
+            <li>Formato: <span data-spec="size">—</span></li>
+          </ul>
+        </div>
+        <div class="modal__buy">
+          <label for="qty">Cantidad</label>
+          <input id="qty" type="number" min="1" step="1" value="1">
+          <div class="modal__actions">
+            <a id="whatsBuy" class="btn ghost" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+            <button id="addFromModal" class="btn primary">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal__backdrop"></div>
+  </div>
+
+  <!-- Mini carrito (UNIFICADO para toda la tienda) -->
+  <aside class="mini-cart" aria-live="polite" aria-label="Carrito">
+    <button class="mini-cart__toggle" aria-expanded="false">
+      Carrito <span id="cartCount" class="qty">0</span>
+    </button>
+    <div class="mini-cart__panel">
+      <ul id="cartItems" class="mini-cart__items"></ul>
+      <div class="mini-cart__footer">
+        <div class="line">
+          <span>Total:</span><strong id="cartTotal">$0</strong>
+        </div>
+        <button id="openCheckout" class="btn primary">Finalizar por WhatsApp</button>
+        <button id="cartClear" class="btn ghost">Vaciar</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Modal Checkout -->
+  <div class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <button class="modal__close" aria-label="Cerrar">&times;</button>
+      <h3 id="checkoutTitle">Datos para confirmar por WhatsApp</h3>
+
+      <form id="checkoutForm" class="checkout-form">
+        <div class="row">
+          <label>Nombre completo
+            <input name="name" type="text" placeholder="Tu nombre" required>
+          </label>
+          <label>Teléfono
+            <input name="phone" type="tel" placeholder="+52 ..." required>
+          </label>
+        </div>
+
+        <label>Método de entrega
+          <select name="delivery" required>
+            <option value="Recoger en tienda">Recoger en tienda</option>
+            <option value="Envío a domicilio">Envío a domicilio</option>
+          </select>
+        </label>
+
+        <label>Dirección (si aplica envío)
+          <input name="address" type="text" placeholder="Calle, número, colonia, ciudad, CP">
+        </label>
+
+        <label>Notas
+          <textarea name="notes" rows="3" placeholder="Color, horario, referencias…"></textarea>
+        </label>
+
+        <div class="modal__actions">
+          <button type="submit" class="btn primary">Confirmar en WhatsApp</button>
+        </div>
+      </form>
+    </div>
+    <div class="modal__backdrop"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" id="contacto">
+    <p>¿Dudas? Escríbenos: <a class="accent" href="https://wa.me/528443288521" target="_blank" rel="noopener">+52 844 328 8521</a></p>
+    <small>&copy; 2025 Librería Vida — Todos los derechos reservados</small>
+  </footer>
+
+  <!-- JS -->
+  <script src="libros.js" defer></script>
+
+  

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Biblias – Librería Vida</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="IMAGENES/favicon.png" type="image/png"/>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="biblias.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a class="logo" href="index.html" aria-label="Volver al inicio">
+      <img src="IMAGENES/ChatGPT_Image_15_ago_2025__12_29_34_a.m.-removebg-preview (1).png" alt="Librería Vida">
+      <span>Librería <strong>Vida</strong></span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a class="active" href="biblias.html">Biblias</a>
+      <a href="regalos.html">Regalos</a>
+      <a href="libros.html">Libros</a>
+      <a href="cuadros.html">Cuadros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <a class="header__cta" href="https://wa.me/528443288521?text=Hola%20Librer%C3%ADa%20Vida%2C%20necesito%20ayuda%20con%20Biblias"
+       target="_blank" rel="noopener">WhatsApp</a>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a>
+    <span aria-hidden="true">›</span>
+    <strong>Biblias</strong>
+  </nav>
+
+  
+
+      <!-- botón para abrir drawer de filtros -->
+      <button id="openFilters" class="btn filter-btn" type="button" aria-controls="filtersDrawer" aria-expanded="false">
+        ☰ Filtros
+      </button>
+
+      <!-- búsqueda -->
+      <div class="searchbox">
+        <input id="search" type="search" placeholder="Buscar Biblia (ej. ‘letra grande’, ‘zipper’)…" aria-label="Buscar"/>
+      </div>
+    </div>
+
+    <!-- orden -->
+    <div class="sorter">
+      <label for="sort">Ordenar:</label>
+      <select id="sort" aria-label="Ordenar productos">
+        <option value="relevance">Relevancia</option>
+        <option value="price-asc">Precio: menor a mayor</option>
+        <option value="price-desc">Precio: mayor a menor</option>
+        <option value="title-asc">Nombre: A–Z</option>
+        <option value="title-desc">Nombre: Z–A</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Drawer de filtros (tipo Amazon) -->
+  <aside id="filtersDrawer" class="filters-drawer" aria-hidden="true">
+    <div class="filters-drawer__header">
+      <h3>Filtros</h3>
+      <button id="closeFilters" class="icon-btn" aria-label="Cerrar filtros">✕</button>
+    </div>
+
+    <form id="filtersForm" class="filters-form">
+      <fieldset>
+        <legend>Versión</legend>
+        <label><input type="checkbox" name="variant" value="rvr60"> RVR60</label>
+        <label><input type="checkbox" name="variant" value="ntv"> NTV</label>
+        <label><input type="checkbox" name="variant" value="nvi"> NVI</label>
+        <label><input type="checkbox" name="variant" value="estudio"> Estudio</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Tamaño</legend>
+        <label><input type="checkbox" name="size" value="bolsillo"> Bolsillo</label>
+        <label><input type="checkbox" name="size" value="compacta"> Compacta</label>
+        <label><input type="checkbox" name="size" value="manual"> Manual</label>
+        <label><input type="checkbox" name="size" value="supergigante"> Supergigante</label>
+      </fieldset>
+
+      <fieldset class="price-field">
+        <legend>Precio (MXN)</legend>
+        <div class="price-row">
+          <input type="number" id="minPrice" placeholder="Mín" min="0" step="10">
+          <span>–</span>
+          <input type="number" id="maxPrice" placeholder="Máx" min="0" step="10">
+        </div>
+      </fieldset>
+
+      <div class="filters-actions">
+        <button id="applyFilters" type="button" class="btn primary">Aplicar</button>
+        <button id="clearFilters" type="button" class="btn ghost">Limpiar</button>
+      </div>
+    </form>
+  </aside>
+  <div id="filtersBackdrop" class="backdrop" hidden></div>
+
+  <!-- Meta -->
+  <section class="catalog-meta">
+    <div class="results"><span id="resultsCount">0</span> resultados</div>
+    <div class="view-toggle" role="group" aria-label="Modo de vista">
+      <button id="gridView" class="active" aria-pressed="true">Grid</button>
+      <button id="listView" aria-pressed="false">Lista</button>
+    </div>
+  </section>
+
+  <!-- Grid de productos -->
+  <main class="grid" id="grid" aria-live="polite">
+    <!-- Tarjetas -->
+    <article
+      class="card-product rvr60 supergigante"
+      data-title="Biblia RVR60 Letra Supergigante"
+      data-price="1100"
+      data-variant="rvr60"
+      data-size="supergigante"
+      data-images="IMAGENES/SUPER GIGANTE.jpeg|IMAGENES/SUPER GIGANTE2.jpeg">
+      <div class="card-media">
+        <img src="IMAGENES/SUPER GIGANTE.jpeg" alt="Biblia RVR60 Letra Supergigante">
+        <span class="badge price">$1,100</span>
+      </div>
+      <div class="info">
+        <h3>Biblia RVR60 Letra Supergigante</h3>
+        <p>Concordancia, palabras de Jesús en rojo, tapa imitación piel.</p>
+        <div class="actions">
+          <button class="btn primary add-cart">Agregar</button>
+          <button class="btn ghost view">Ver</button>
+        </div>
+      </div>
+    </article>
+
+    <article
+      class="card-product rvr60 supergigante"
+      data-title="Biblia RVR60 Letra Supergigante Dama"
+      data-price="1275"
+      data-variant="rvr60"
+      data-size="supergigante"
+      data-images="IMAGENES/SG ROSA.jpeg|IMAGENES/SG ROSA2.jpeg">
+      <div class="card-media">
+        <img src="IMAGENES/SG ROSA.jpeg" alt="Biblia RVR60 Letra Supergigante para Dama">
+        <span class="badge price">$1,275</span>
+        <span class="badge sale">Nuevo</span>
+      </div>
+      <div class="info">
+        <h3>Biblia RVR60 Letra Supergigante – Dama</h3>
+        <p>Elegante, ideal para regalo. Índice opcional.</p>
+        <div class="actions">
+          <button class="btn primary add-cart">Agregar</button>
+          <button class="btn ghost view">Ver</button>
+        </div>
+      </div>
+    </article>
+
+    <article
+      class="card-product rvr60 supergigante"
+      data-title="Biblia RVR60 Letra Supergigante c/ Índice"
+      data-price="1345"
+      data-variant="rvr60"
+      data-size="supergigante"
+      data-images="IMAGENES/SSG NEGRA SB.jpeg|IMAGENES/SSG NEGRA SB2.jpeg">
+      <div class="card-media">
+        <img src="IMAGENES/SSG NEGRA SB.jpeg" alt="Biblia RVR60 Letra Supergigante con Índice">
+        <span class="badge price">$1,345</span>
+      </div>
+      <div class="info">
+        <h3>Biblia RVR60 Letra Supergigante – Índice</h3>
+        <p>Índice + letra grande para lectura cómoda.</p>
+        <div class="actions">
+          <button class="btn primary add-cart">Agregar</button>
+          <button class="btn ghost view">Ver</button>
+        </div>
+      </div>
+    </article>
+
+    <article
+      class="card-product rvr60 supergigante"
+      data-title="Biblia RVR60 Letra Supergigante con Zipper"
+      data-price="1375"
+      data-variant="rvr60"
+      data-size="supergigante"
+      data-images="IMAGENES/SGZ CAFE CLASSIC.jpeg|IMAGENES/SGZ CAFE CLASSIC2.jpeg">
+      <div class="card-media">
+        <img src="IMAGENES/SGZ CAFE CLASSIC.jpeg" alt="Biblia RVR60 Letra Supergigante con Zipper">
+        <span class="badge price">$1,375</span>
+      </div>
+      <div class="info">
+        <h3>Biblia RVR60 Letra Supergigante – Zipper</h3>
+        <p>Cierre para proteger páginas; ideal para uso diario.</p>
+        <div class="actions">
+          <button class="btn primary add-cart">Agregar</button>
+          <button class="btn ghost view">Ver</button>
+        </div>
+      </div>
+    </article>
+
+    <article
+      class="card-product ntv compacta"
+      data-title="Biblia NTV Filament Compacta"
+      data-price="895"
+      data-variant="ntv"
+      data-size="compacta"
+      data-images="IMAGENES/COMPACTA.jpeg|IMAGENES/COMPACTA2.jpeg">
+      <div class="card-media">
+        <img src="IMAGENES/COMPACTA.jpeg" alt="Biblia NTV Filament Compacta">
+        <span class="badge price">$895</span>
+        <span class="badge sale">Oferta</span>
+      </div>
+      <div class="info">
+        <h3>Biblia NTV Filament Compacta</h3>
+        <p>Compatible con app Filament; tamaño ideal para llevar.</p>
+        <div class="actions">
+          <button class="btn primary add-cart">Agregar</button>
+          <button class="btn ghost view">Ver</button>
+        </div>
+      </div>
+    </article>
+
+    <article
+      class="card-product nvi manual"
+      data-title="Biblia NVI Telos"
+      data-price="1210"
+      data-variant="nvi"
+      data-size="manual"
+      data-images="IMAGENES/TELOS.jpeg|IMAGENES/TELOS 2.jpg">
+      <div class="card-media">
+        <img src="IMAGENES/TELOS.jpeg" alt="Biblia NVI Telos">
+        <span class="badge price">$1,210</span>
+      </div>
+      <div class="info">
+        <h3>Biblia NVI Telos</h3>
+        <p>Edición moderna, clara y de gran diseño.</p>
+        <div class="actions">
+          <button class="btn primary add-cart">Agregar</button>
+          <button class="btn ghost view">Ver</button>
+        </div>
+      </div>
+    </article>
+
+    <article
+      class="card-product estudio"
+      data-title="Biblia de Estudio Diario Vivir"
+      data-price="2600"
+      data-variant="estudio"
+      data-size=""
+      data-images="IMAGENES/DIARIO VIVIR.jpeg|IMAGENES/DIARIO VIVIR2.jpeg">
+      <div class="card-media">
+        <img src="IMAGENES/DIARIO VIVIR.jpeg" alt="Biblia de Estudio Diario Vivir">
+        <span class="badge price">$2,600</span>
+      </div>
+      <div class="info">
+        <h3>Biblia de Estudio Diario Vivir</h3>
+        <p>Notas de estudio, mapas y recursos devocionales.</p>
+        <div class="actions">
+          <button class="btn primary add-cart">Agregar</button>
+          <button class="btn ghost view">Ver</button>
+        </div>
+      </div>
+    </article>
+
+    <article
+      class="card-product estudio"
+      data-title="Biblia de Estudio Scofield"
+      data-price="1850"
+      data-variant="estudio"
+      data-size=""
+      data-images="IMAGENES/scofield.jpeg|IMAGENES/scofield 2.jpeg|IMAGENES/scofield 3.jpeg">
+      <div class="card-media">
+        <img src="IMAGENES/scofield.jpeg" alt="Biblia de Estudio Scofield">
+        <span class="badge price">$1,850</span>
+      </div>
+      <div class="info">
+        <h3>Biblia de Estudio Scofield</h3>
+        <p>Sistema clásico de referencias y notas.</p>
+        <div class="actions">
+          <button class="btn primary add-cart">Agregar</button>
+          <button class="btn ghost view">Ver</button>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Modal Producto (completo) -->
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" aria-label="Cerrar">&times;</button>
+
+      <div class="modal__header">
+        <h3 id="modalTitle">Producto</h3>
+        <span id="modalPrice" class="modal__price"></span>
+      </div>
+
+      <div class="product-gallery">
+        <div class="gallery__stage">
+          <button class="gallery__nav left" aria-label="Anterior">&#10094;</button>
+          <img id="galleryMain" src="" alt="">
+          <button class="gallery__nav right" aria-label="Siguiente">&#10095;</button>
+        </div>
+        <div class="thumbs" id="galleryThumbs"></div>
+      </div>
+
+      <div class="modal__body">
+        <div class="modal__desc">
+          <h4>Descripción</h4>
+          <p id="modalDesc">Edición con letra grande, excelentes acabados y materiales durables.</p>
+          <ul id="modalSpecs" class="specs">
+            <li>Versión: <span data-spec="variant">—</span></li>
+            <li>Tamaño: <span data-spec="size">—</span></li>
+          </ul>
+        </div>
+        <div class="modal__buy">
+          <label for="qty">Cantidad</label>
+          <input id="qty" type="number" min="1" step="1" value="1">
+          <div class="modal__actions">
+            <a id="whatsBuy" class="btn ghost" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+            <button id="addFromModal" class="btn primary">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal__backdrop"></div>
+  </div>
+
+  <!-- Mini carrito -->
+  <aside class="mini-cart" aria-live="polite" aria-label="Carrito">
+    <button class="mini-cart__toggle" aria-expanded="false">
+      Carrito <span id="cartCount" class="qty">0</span>
+    </button>
+    <div class="mini-cart__panel">
+      <ul id="cartItems" class="mini-cart__items"></ul>
+      <div class="mini-cart__footer">
+        <div class="line">
+          <span>Total:</span><strong id="cartTotal">$0</strong>
+        </div>
+        <button id="openCheckout" class="btn primary">Finalizar por WhatsApp</button>
+        <button id="cartClear" class="btn ghost">Vaciar</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Modal Checkout (confirmación por WhatsApp) -->
+  <div class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <button class="modal__close" aria-label="Cerrar">&times;</button>
+      <h3 id="checkoutTitle">Datos para confirmar por WhatsApp</h3>
+
+      <form id="checkoutForm" class="checkout-form">
+        <div class="row">
+          <label>Nombre completo
+            <input name="name" type="text" placeholder="Tu nombre" required>
+          </label>
+          <label>Teléfono
+            <input name="phone" type="tel" placeholder="+52 ..." required>
+          </label>
+        </div>
+
+        <label>Método de entrega
+          <select name="delivery" required>
+            <option value="Recoger en tienda">Recoger en tienda</option>
+            <option value="Envío a domicilio">Envío a domicilio</option>
+          </select>
+        </label>
+
+        <label>Dirección (si aplica envío)
+          <input name="address" type="text" placeholder="Calle, número, colonia, ciudad, CP">
+        </label>
+
+        <label>Notas
+          <textarea name="notes" rows="3" placeholder="Color, horario, referencias…"></textarea>
+        </label>
+
+        <div class="modal__actions">
+          <button type="submit" class="btn primary">Confirmar en WhatsApp</button>
+        </div>
+      </form>
+    </div>
+    <div class="modal__backdrop"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" id="contacto">
+    <p>¿Dudas? Escríbenos: <a class="accent" href="https://wa.me/528443288521" target="_blank" rel="noopener">+52 844 328 8521</a></p>
+    <small>&copy; 2025 Librería Vida — Todos los derechos reservados</small>
+  </footer>
+
+  <!-- JS -->
+  <script src="biblias.js"></script>
+</body>
+</html>
